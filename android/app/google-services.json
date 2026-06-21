@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "891872442975",
+    "firebase_url": "https://expenses-tracker-8e89c-default-rtdb.firebaseio.com",
+    "project_id": "expenses-tracker-8e89c",
+    "storage_bucket": "expenses-tracker-8e89c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891872442975:android:8d8bf34cf9b552601739ea",
+        "android_client_info": {
+          "package_name": "com.example.chatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVXlhs0sNfdMqsmN5QaRZTXJvO1yUAKqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891872442975:android:501cde49cd0e60bf1739ea",
+        "android_client_info": {
+          "package_name": "com.example.expensestracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVXlhs0sNfdMqsmN5QaRZTXJvO1yUAKqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891872442975:android:7eedb4122ef3b41e1739ea",
+        "android_client_info": {
+          "package_name": "com.example.skillday"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVXlhs0sNfdMqsmN5QaRZTXJvO1yUAKqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

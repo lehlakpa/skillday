@@ -18,20 +18,30 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Animated screen transition
+      // Screen Animation
       body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 400),
-        switchInCurve: Curves.easeOut,
+        duration: const Duration(milliseconds: 500),
+        switchInCurve: Curves.easeOutCubic,
         switchOutCurve: Curves.easeIn,
 
         transitionBuilder: (child, animation) {
-          final slideAnimation = Tween<Offset>(
-            begin: const Offset(0.15, 0),
-            end: Offset.zero,
-          ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut));
+          // Fade Animation
+          final fadeAnimation = CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeOut,
+          );
+
+          // Fade Up Animation
+          final slideAnimation =
+              Tween<Offset>(
+                begin: const Offset(0, 0.08),
+                end: Offset.zero,
+              ).animate(
+                CurvedAnimation(parent: animation, curve: Curves.easeOutCubic),
+              );
 
           return FadeTransition(
-            opacity: animation,
+            opacity: fadeAnimation,
             child: SlideTransition(position: slideAnimation, child: child),
           );
         },
@@ -42,12 +52,12 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
         ),
       ),
 
-      // Bottom Navigation Bar
+      // Bottom Navigation
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
+              color: Colors.black.withAlpha(25),
               blurRadius: 10,
               offset: const Offset(0, -2),
             ),
@@ -56,14 +66,6 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
-
-          onTap: (index) {
-            if (_currentIndex == index) return;
-
-            setState(() {
-              _currentIndex = index;
-            });
-          },
 
           backgroundColor: Colors.white,
           selectedItemColor: Colors.blue,
@@ -75,16 +77,24 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
             fontWeight: FontWeight.w400,
           ),
 
+          onTap: (index) {
+            if (_currentIndex == index) return;
+
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
               activeIcon: Icon(Icons.home_rounded, color: Colors.blue),
-              label: 'Home',
+              label: "Home",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history_rounded),
               activeIcon: Icon(Icons.history_rounded, color: Colors.blue),
-              label: 'History',
+              label: "History",
             ),
           ],
         ),

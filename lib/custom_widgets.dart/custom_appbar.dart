@@ -12,8 +12,15 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.blue,
       centerTitle: false,
+      leading: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: CircleAvatar(
+          backgroundColor: Colors.white,
+          child: Icon(Icons.person, color: Colors.blue),
+        ),
+      ),
       title: Text(
-        "Weather Forecasting",
+        "History",
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.bold,
           fontSize: 24,
